@@ -29,3 +29,9 @@
 ## 12. Discussion
 
 ## 13. Generative AI disclosure
+
+Used ChatGPT for:
+- explanation of SPIMI
+- code review
+- debugging assistance
+- test-design suggestions

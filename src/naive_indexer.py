@@ -1,19 +1,47 @@
-"""
-Subproject I: naive indexer.
 
-Input: documents as (docID, tokens).
-Steps:
-1. append every (term, docID) pair to a list F
-2. sort F
-3. remove duplicate pairs
-4. group the docIDs of each term into a postings list
-
-Output: inverted index, term -> postings list.
-"""
 
 
 # TODO: build F from the token stream
 
-# TODO: sort F and remove duplicates
+def build_pair_list(documents):
+    pairs = []
+    
+    for doc_id,tokens in documents:
+        for term in tokens :
+            pairs.append((term,doc_id))
+            
+    return pairs        
+            
 
-# TODO: turn the sorted pairs into postings lists
+def sort_and_deduplicate(pairs):
+    pairs.sort()
+    
+    unique_pairs = []
+    
+    previous_pair = None
+    
+    for pair in pairs:
+        if pair != previous_pair:
+            unique_pairs.append(pair)
+            previous_pair = pair
+    return unique_pairs        
+    
+
+def build_inverted_index(unique_pairs):
+    index = {}
+    
+    for term,doc_id in unique_pairs:
+        if term not in index:
+            index[term] = []
+            
+        index[term].append(doc_id)
+    return index        
+
+
+def build_naive_index(documents):
+    pairs = build_pair_list(documents)
+    unique_pairs = sort_and_deduplicate(pairs)
+    index = build_inverted_index(unique_pairs)
+    
+    return index
+    
