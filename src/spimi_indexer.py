@@ -1,12 +1,30 @@
-"""
-Subproject IV: SPIMI-inspired indexer.
+# Build postings lists directly from the document token stream.
+def build_spimi_index(documents):
+    
+    
+    index = {
+        
+    }
+    
+    for doc_id,tokens in documents :
+        
+        
+        unique_terms = set(tokens)
+        
+        for term in unique_terms:
+            
+            if term not in index:
+                index[term] = []
+                
+            index[term].append(doc_id)
+            
+            
+    index = sort_index_terms(index)        
+            
+    return index
 
-Postings lists are built directly while the documents are read,
-without making and sorting a list of term-docID pairs first.
-No compression is used for this index.
-"""
 
 
-# TODO: add each token directly to the postings list of its term
-
-# TODO: sort the terms at the end
+# Sort dictionary terms alphabetically.            
+def sort_index_terms(index):
+    return dict(sorted(index.items()))
