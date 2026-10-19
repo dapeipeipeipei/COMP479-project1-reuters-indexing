@@ -1,8 +1,5 @@
 
 
-
-# TODO: build F from the token stream
-
 def build_pair_list(documents):
     pairs = []
     

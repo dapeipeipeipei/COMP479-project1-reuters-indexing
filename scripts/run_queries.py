@@ -1,49 +1,75 @@
+from pathlib import Path
+
 from src.preprocessing import iter_documents
 from src.naive_indexer import build_naive_index
 from src.query_processor import single_term_query, and_query
-import time
+
 
 def main():
-    print("Building index...")
+
+    print("Building naive index...")
+
     index = build_naive_index(iter_documents())
-    
-    
-    
+
     single_queries = [
         "cocoa",
         "bahia",
-        "review",
+        "review"
     ]
-    
+
     and_queries = [
         ["cocoa", "bahia"],
         ["cocoa", "review"],
-        ["bahia", "review"],
+        ["bahia", "review"]
     ]
-    
-    
-    
-    print("\n--- Single-term queries ---")
-    
+
+    lines = []
+
+    lines.append("S2 Query Results")
+    lines.append("================")
+    lines.append("")
+
+    # Single-term queries
+    lines.append("Single-term queries")
+    lines.append("-------------------")
+
     for term in single_queries:
-        start = time.perf_counter()
-        result = single_term_query(index,term)
-        end = time.perf_counter()
-        print(f"Naive index build time: {end - start:.4f} seconds")
-        
-        print(f"\nQuery:{term}")
-        print(f"Number of results:{len(result)}")
-        print(f"DocIDs:{result}")
-        
-        
-    print("\n --- AND queris ---")
-    
+
+        result = single_term_query(index, term)
+
+        lines.append(f"Query: {term}")
+        lines.append(f"Number of results: {len(result)}")
+        lines.append(f"DocIDs: {result}")
+        lines.append("")
+
+    # AND queries
+    lines.append("AND queries")
+    lines.append("-----------")
+
     for terms in and_queries:
-        result = and_query(index,terms)
-        
-        print(f"\nQuery:{' AND ' .join(terms)}")
-        print(f"Number of results: {len(result)}")
-        print(f"DocIDs:{result}")    
+
+        result = and_query(index, terms)
+
+        query_text = " AND ".join(terms)
+
+        lines.append(f"Query: {query_text}")
+        lines.append(f"Number of results: {len(result)}")
+        lines.append(f"DocIDs: {result}")
+        lines.append("")
+
+    result_text = "\n".join(lines)
+
+    print(result_text)
+
+    output_dir = Path("results/queries")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    output_file = output_dir / "s2_queries.txt"
+
+    with open(output_file, "w", encoding="utf-8") as file:
+        file.write(result_text)
+
+    print(f"\nSaved to: {output_file}")
 
 
 if __name__ == "__main__":
