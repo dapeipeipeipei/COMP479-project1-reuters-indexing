@@ -27,7 +27,7 @@ def test_build_pair_list():
         ("apple",1),
         ("banana",1),
         ("apple",1),
-        ("banana",1),
+        ("banana",2),
         ("carrot",2),
         
     ]
@@ -36,7 +36,7 @@ def test_build_pair_list():
     
     
     
-def test_sort_and_deduplcate():
+def test_sort_and_deduplicate():
     pairs = [
         ("banana", 2),
         ("apple", 1),
@@ -45,3 +45,50 @@ def test_sort_and_deduplcate():
     ]
     
     result = sort_and_deduplicate(pairs)
+    expected = [
+        ("apple",1),
+        ("banana",1),
+        ("banana",2),
+    ]
+    assert result == expected
+    
+def test_build_inverted_index():
+    
+    unique_pairs = [
+        ("apple", 1),
+        ("apple", 3),
+        ("banana", 1),
+        ("banana", 2),
+        ("carrot", 2),
+        ("carrot", 3),  
+    ]   
+    
+    result = build_inverted_index(unique_pairs)
+    
+    expected = {
+        "apple": [1, 3],
+        "banana": [1, 2],
+        "carrot": [2, 3],  
+    } 
+    
+    
+    assert result == expected
+    
+    
+def test_build_naive_index():
+    documents = [
+        (1, ["apple", "banana", "apple"]),
+        (2, ["banana", "carrot"]),
+        (3, ["apple", "carrot"]),
+        
+    ] 
+    
+    result = build_naive_index (documents)
+    
+    expected = {
+         "apple": [1, 3],
+        "banana": [1, 2],
+        "carrot": [2, 3],
+    }   
+    
+    assert result == expected
