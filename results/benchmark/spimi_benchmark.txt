@@ -1,0 +1,5 @@
+Benchmark results (20 runs)
+Average Naive time: 0.005808 seconds
+Average SPIMI time: 0.001528 seconds
+SPIMI speedup: 3.80x
+Indexes identical: True

@@ -1,0 +1,7 @@
+Query	Original Results	Compressed Results	Change
+cocoa	97	97	+0
+bahia	15	15	+0
+review	373	488	+115
+cocoa AND bahia	10	10	+0
+cocoa AND review	5	8	+3
+bahia AND review	4	4	+0
