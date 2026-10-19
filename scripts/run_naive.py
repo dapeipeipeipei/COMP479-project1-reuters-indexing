@@ -1,3 +1,6 @@
+# Subproject I: build the naive index on the full Reuters-21578 collection
+# and print the number of terms and three sample postings lists.
+
 from src.preprocessing import iter_documents
 from src.naive_indexer import build_naive_index
 

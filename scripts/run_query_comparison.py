@@ -1,3 +1,6 @@
+# Subproject III: run the six sample queries on the original and the compressed index
+# and compare the number of results. Output: experiments/compression/query_comparison.tsv
+
 from pathlib import Path
 
 from src.preprocessing import iter_documents

@@ -1,3 +1,6 @@
+# Subproject IV (a): build the SPIMI-inspired index on the full collection
+# (no compression) and print the same samples as run_naive for comparison.
+
 from src.preprocessing import iter_documents
 from src.spimi_indexer import build_spimi_index
 

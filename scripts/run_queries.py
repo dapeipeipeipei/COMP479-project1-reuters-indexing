@@ -1,3 +1,6 @@
+# Subproject II: run the 3 single-term and 3 AND sample queries on the naive index.
+# Output: results/queries/s2_queries.txt
+
 from pathlib import Path
 
 from src.preprocessing import iter_documents

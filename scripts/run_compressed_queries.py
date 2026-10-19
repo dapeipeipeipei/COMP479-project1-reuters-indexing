@@ -1,3 +1,6 @@
+# Subproject III (extra): run the six sample queries on the compressed index only.
+# Query terms go through the same compression steps as the documents. Prints to the console.
+
 from src.compression import (
     build_compressed_documents,
     compress_query_terms

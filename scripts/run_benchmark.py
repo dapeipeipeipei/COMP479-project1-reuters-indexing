@@ -1,3 +1,6 @@
+# Subproject IV (b): time the naive and SPIMI-inspired indexers on 10,000 term-docID pairings.
+# Output: results/benchmark/spimi_benchmark.txt
+
 from pathlib import Path
 
 from src.preprocessing import iter_documents

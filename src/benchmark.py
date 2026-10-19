@@ -14,6 +14,9 @@ from src.spimi_indexer import build_spimi_index
 
 
 
+# Keep documents until the total number of tokens reaches the limit.
+# One token = one term-docID pair, so limit=10000 gives 10,000 pairings.
+# The last document is cut so the total is exactly the limit.
 def limit_documents(documents, limit):
     limited_documents = []
     count = 0
@@ -35,6 +38,9 @@ def limit_documents(documents, limit):
     return limited_documents
 
 
+# Build both indexes on the same documents `runs` times and average the times.
+# Also checks that the two indexes are the same in every run.
+# Returns (average naive time, average SPIMI time, speedup, same_index).
 def benchmark_indexers(documents, runs=20):
 
     naive_times = []

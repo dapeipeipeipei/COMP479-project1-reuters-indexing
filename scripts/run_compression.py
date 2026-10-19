@@ -1,3 +1,6 @@
+# Subproject III: build the dictionary compression table (terms / postings after each stage).
+# Output: experiments/compression/compression_table.tsv
+
 from src.compression import run_compression_experiment
 from pathlib import Path
 
