@@ -2,6 +2,8 @@
 
 Building an inverted index for the Reuters-21578 collection (NEWID = docID), with a naive indexer, query processing, a lossy compression experiment and a SPIMI-inspired indexer.
 
+GitHub: https://github.com/dapeipeipeipei/COMP479-project1-reuters-indexing
+
 ## Requirements
 
 - **Subproject I – Naive indexer:** token stream → list F of term-docID pairs → sort → remove duplicates → postings lists.
@@ -32,6 +34,8 @@ python -m venv .venv
 .venv\Scripts\python -m pip install -r requirements.txt
 .venv\Scripts\python -c "import nltk; nltk.download('punkt_tab')"
 ```
+
+On macOS / Linux use `python3 -m venv .venv` and replace `.venv\Scripts\python` with `.venv/bin/python` in all commands.
 
 Download `reuters21578.tar.gz` from http://www.daviddlewis.com/resources/testcollections/reuters21578/ and extract it to `data/raw/reuters21578/` (the folder should contain `reut2-000.sgm` … `reut2-021.sgm`).
 
@@ -66,5 +70,5 @@ Run from the project root (the data path is relative):
 - [x] Naive vs SPIMI timing – `src/benchmark.py`, `scripts/run_benchmark.py`, `results/benchmark/`
 - [x] Challenge queries – `scripts/run_challenge.py`, `results/challenge/`
 - [x] Tests – `tests/`
-- [ ] Report – `report/project_report.md` (AI use disclosure still to be written)
+- [x] Report – `report/project_report.md` 
 - [x] Demo – `demo/demo.md`

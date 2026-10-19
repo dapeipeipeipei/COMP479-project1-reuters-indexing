@@ -5,7 +5,7 @@
 **Dataset:** Reuters-21578  
 **Name:** Wenshuo Pei  
 **Student ID:** 40281918  
-**Date:** 2026/10/14  
+**Date:** 2026/10/18 
 
 ## 1. Introduction
 
