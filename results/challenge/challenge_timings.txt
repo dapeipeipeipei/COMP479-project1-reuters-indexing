@@ -1,0 +1,21 @@
+COMP 479/6791 Project 1 - 24-hour Challenge Timings
+===================================================
+
+Documents: 21578
+Corpus preprocessing time (parse + tokenize, shared): 12.477 s
+Naive index construction time: 2.179 s
+SPIMI index construction time: 0.313 s
+Naive terms: 74870
+SPIMI terms: 74870
+Full Naive and SPIMI indexes identical: True
+
+Query timing method: time.perf_counter() around a loop of repeated calls
+to single_term_query() / and_query() on the already-built index;
+excludes index construction, document scanning, validation and file writes.
+Repetitions per query and index: 10000
+
+Average query time (microseconds per query)
+-------------------------------------------
+Carmark: Naive 0.094 us, SPIMI 0.092 us
+copper: Naive 0.093 us, SPIMI 0.090 us
+Chrysler and Bundesbank: Naive 14.905 us, SPIMI 15.020 us

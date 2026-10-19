@@ -1,0 +1,42 @@
+COMP 479/6791 Project 1 - 24-hour Challenge Results
+===================================================
+
+Documents indexed: 21578
+Query terms are lowercased by single_term_query(); 'and' is treated as the Boolean AND operator.
+
+Query 1: Carmark
+Parsed terms: ['Carmark']
+Naive results: 1
+Naive DocIDs: [19758]
+SPIMI results: 1
+SPIMI DocIDs: [19758]
+Naive and SPIMI identical: True
+DocIDs sorted and unique: Naive=True, SPIMI=True
+Document scan results: 1
+Match independent document scan: Naive=True, SPIMI=True
+
+Query 2: copper
+Parsed terms: ['copper']
+Naive results: 117
+Naive DocIDs: [22, 793, 800, 816, 922, 1148, 1184, 1552, 1607, 2006, 2074, 2186, 2764, 2782, 2880, 3454, 3613, 3862, 4291, 4373, 4431, 4744, 4816, 5203, 5209, 5435, 5788, 5827, 5888, 6025, 6225, 6395, 6846, 6927, 7552, 7724, 7775, 8569, 8601, 11053, 11273, 11945, 12024, 12215, 12223, 12243, 12484, 12489, 12513, 12633, 12641, 12651, 12683, 12692, 12725, 12857, 12861, 12910, 12926, 12963, 12980, 12992, 13003, 13465, 13495, 13608, 13665, 13670, 13675, 13687, 13694, 13757, 13877, 13897, 14136, 14274, 14297, 14302, 14398, 14476, 14499, 14572, 14687, 14805, 14852, 15166, 15264, 15556, 15831, 15932, 15988, 16110, 16123, 16971, 17007, 17118, 17714, 18225, 18280, 18317, 18339, 18392, 18394, 18430, 18457, 18631, 18691, 18758, 18849, 18952, 19502, 19781, 19786, 19878, 20096, 21293, 21327]
+SPIMI results: 117
+SPIMI DocIDs: [22, 793, 800, 816, 922, 1148, 1184, 1552, 1607, 2006, 2074, 2186, 2764, 2782, 2880, 3454, 3613, 3862, 4291, 4373, 4431, 4744, 4816, 5203, 5209, 5435, 5788, 5827, 5888, 6025, 6225, 6395, 6846, 6927, 7552, 7724, 7775, 8569, 8601, 11053, 11273, 11945, 12024, 12215, 12223, 12243, 12484, 12489, 12513, 12633, 12641, 12651, 12683, 12692, 12725, 12857, 12861, 12910, 12926, 12963, 12980, 12992, 13003, 13465, 13495, 13608, 13665, 13670, 13675, 13687, 13694, 13757, 13877, 13897, 14136, 14274, 14297, 14302, 14398, 14476, 14499, 14572, 14687, 14805, 14852, 15166, 15264, 15556, 15831, 15932, 15988, 16110, 16123, 16971, 17007, 17118, 17714, 18225, 18280, 18317, 18339, 18392, 18394, 18430, 18457, 18631, 18691, 18758, 18849, 18952, 19502, 19781, 19786, 19878, 20096, 21293, 21327]
+Naive and SPIMI identical: True
+DocIDs sorted and unique: Naive=True, SPIMI=True
+Document scan results: 117
+Match independent document scan: Naive=True, SPIMI=True
+
+Query 3: Chrysler and Bundesbank
+Parsed terms: ['Chrysler', 'Bundesbank']
+Naive results: 0
+Naive DocIDs: []
+SPIMI results: 0
+SPIMI DocIDs: []
+Naive and SPIMI identical: True
+DocIDs sorted and unique: Naive=True, SPIMI=True
+Document scan results: 0
+Match independent document scan: Naive=True, SPIMI=True
+
+Full Naive and SPIMI indexes identical: True
+
+All correctness checks passed.
