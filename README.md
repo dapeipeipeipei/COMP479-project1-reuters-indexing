@@ -23,8 +23,8 @@ data/raw/       Reuters-21578 files (not in Git)
 data/processed/ generated files (not in Git)
 results/        query outputs, benchmark timings, challenge queries
 experiments/    compression experiment tables
-report/         project report
-demo/           demo notes and screenshots
+report/         project report and compression experiment (.md + .pdf)
+demo/           demo file with screenshots (.md + .pdf)
 ```
 
 ## Setup (Windows)

@@ -11,7 +11,7 @@
 
 The purpose of this project is to implement and compare two inverted-index construction methods on Reuters-21578: a naive indexer and a SPIMI-inspired indexer. The project also includes single-term and AND query processing, a lossy preprocessing experiment, and a performance comparison between the two indexing approaches.
 
-Reuters-21578 is stored as a set of SGML files. The `NEWID` value of each Reuters article is used as its document identifier so that all indexers and query processors work with the same document IDs.
+Reuters-21578 [2] is stored as a set of SGML files. The `NEWID` value of each Reuters article is used as its document identifier so that all indexers and query processors work with the same document IDs.
 
 The project is divided into four main parts:
 
@@ -106,7 +106,7 @@ These tests confirm that the query processor returns the intersection of the pos
 
 ## 5. Subproject III — Compression Experiment
 
-A separate compression experiment was performed using the preprocessing stages from Table 5.1 of the course material.
+A separate compression experiment was performed using the preprocessing stages from Table 5.1 of the course textbook [1].
 
 Numbers are tokens that parse with Python `float()` after commas and a trailing `%` are removed. The 30 and 150 stopwords are the most frequent terms of the case-folded Reuters-21578 collection, not a standard stopword list, and both are removed from the case-folded collection. Stemming uses NLTK `PorterStemmer` and is applied to the 150-stopword collection. The exact definitions are given in the Compression Experiment document.
 
@@ -340,4 +340,10 @@ Overall, the project demonstrates the relationship between preprocessing, invert
 
 ## 11. Generative AI Use Disclosure
 
-Generative AI was used as a support tool during this project to explain information-retrieval concepts, review and discuss implementation ideas, help diagnose and refine parts of the code. The implementation was run, tested, debugged, and verified against the Reuters-21578 data by the author. 
+Generative AI was used as a support tool during this project to explain information-retrieval concepts, review and discuss implementation ideas, help diagnose and refine parts of the code. The implementation was run, tested, debugged, and verified against the Reuters-21578 data by the author.
+
+## References
+
+[1] C. D. Manning, P. Raghavan, and H. Schütze, *Introduction to Information Retrieval*. Cambridge University Press, 2008. Chapter 5, Table 5.1.
+
+[2] D. D. Lewis, *Reuters-21578 Text Categorization Test Collection*, Distribution 1.0. http://www.daviddlewis.com/resources/testcollections/reuters21578/

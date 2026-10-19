@@ -3,10 +3,13 @@
 **Course:** COMP 479/6791 — Information Retrieval and Web Search  
 **Project:** Project 1 — Reuters-21578 Indexing  
 **Dataset:** Reuters-21578  
+**Name:** Wenshuo Pei  
+**Student ID:** 40281918  
+**Date:** 2026/10/18  
 
 ## 1. Objective
 
-The purpose of this experiment is to study how lossy preprocessing affects the size of an inverted index built from Reuters-21578. The experiment follows the preprocessing stages shown in Table 5.1 of the course material and records two measurements after each stage:
+The purpose of this experiment is to study how lossy preprocessing affects the size of an inverted index built from Reuters-21578. The experiment follows the preprocessing stages shown in Table 5.1 of the course textbook [1] and records two measurements after each stage:
 
 - the number of distinct **terms** in the dictionary;
 - the number of **non-positional postings**, where one posting represents one term-document relationship.
@@ -15,7 +18,7 @@ The goal is not only to reduce the index, but also to understand which preproces
 
 ## 2. Experimental Setup
 
-The Reuters-21578 corpus was parsed using the `NEWID` attribute as the document identifier. For each document, text was extracted from the `TITLE` and `BODY` fields and tokenized with NLTK.
+The Reuters-21578 corpus [2] was parsed using the `NEWID` attribute as the document identifier. For each document, text was extracted from the `TITLE` and `BODY` fields and tokenized with NLTK.
 
 The following preprocessing stages were tested:
 
@@ -89,7 +92,7 @@ Therefore, stemming has a much stronger effect on vocabulary size than on postin
 
 ## 5. Comparison with Table 5.1
 
-The reference Table 5.1 in the course material reports the following values for a much larger Reuters collection:
+The reference Table 5.1 in the course textbook [1] reports the following values for a much larger Reuters collection:
 
 | Stage | Terms | Term Δ | Term Cml | Non-positional postings | Posting Δ | Posting Cml |
 |---|---:|---:|---:|---:|---:|---:|
@@ -123,3 +126,9 @@ The experiment shows that different lossy preprocessing techniques affect differ
 For Reuters-21578, the complete preprocessing pipeline reduces the dictionary by about **54.0%** and the non-positional postings by about **48.4%**.
 
 The exact percentages differ from Table 5.1, but the main trends are similar. This supports the same general conclusion as the reference experiment: lossy preprocessing can make an inverted index substantially smaller by removing or merging information that is not always necessary for retrieval.
+
+## References
+
+[1] C. D. Manning, P. Raghavan, and H. Schütze, *Introduction to Information Retrieval*. Cambridge University Press, 2008. Chapter 5, Table 5.1.
+
+[2] D. D. Lewis, *Reuters-21578 Text Categorization Test Collection*, Distribution 1.0. http://www.daviddlewis.com/resources/testcollections/reuters21578/
